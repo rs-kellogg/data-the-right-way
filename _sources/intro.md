@@ -1,11 +1,13 @@
-# Welcome to your Jupyter Book
+# Data the Right Way
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+These workshop materials cover some highlights on how to work with datasets at Kellogg. 
 
-Check out the content pages bundled with this sample book to see more.
+We will look at how to query datasets hosted in the Kellogg Data Cloud (KDC), as well as datasets hosted on the Kellogg Linux Cluster (KLC)
+
+We will also provide some tips on how to automate data workflows in order to make your research more easily reproducible. Your future self will thank you!
+
+
+![Data Workflow](images/data-pipeline.png)
 
 ```{tableofcontents}
 ```
