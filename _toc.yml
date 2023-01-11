@@ -4,6 +4,8 @@
 format: jb-book
 root: intro
 chapters:
-- file: introduction
-- file: notebooks
-- file: markdown-notebooks
+- file: kellogg-datasets
+- file: kdc-datasets
+- file: klc-datasets
+- file: data-automation
+- file: summary
