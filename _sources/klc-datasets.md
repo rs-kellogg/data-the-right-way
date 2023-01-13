@@ -8,4 +8,9 @@
 ![Data Workflow](images/data-pipeline-klc.png)
 
 
-![Data Workflow](images/data-formats.png)
+[//]: # (![Data Workflow]&#40;images/data-formats.png&#41;)
+```{image} ./images/data-formats.png
+    :alt: data-formats
+    :width: 500px
+    :align: center
+```
