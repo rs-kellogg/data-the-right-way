@@ -7,8 +7,9 @@
 
 ![Data Workflow](images/data-pipeline-klc.png)
 
+* With KLC, the data exist as inert files on disk -- there is no general way to load and query the data. Instead, we need to write code to load the data into memory, and then query it. This is a very powerful approach, but it requires some programming.
+* What kinds of program you write depends on the *format* of the data files. There is no single format. Some are text-based (CSV, JSON, XML), some are binary (Parquet, Avro, ORC).
 
-[//]: # (![Data Workflow]&#40;images/data-formats.png&#41;)
 ```{image} ./images/data-formats.png
     :alt: data-formats
     :width: 500px

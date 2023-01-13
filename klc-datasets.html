@@ -330,6 +330,10 @@ title="Print to PDF"
 <li><p>KLC is part of <a class="reference external" href="https://www.it.northwestern.edu/departments/it-services-support/research/computing/quest/index.html">Quest</a> Northwestern’s High-Performance Computing (HPC) cluster.</p></li>
 </ul>
 <p><img alt="Data Workflow" src="_images/data-pipeline-klc.png" /></p>
+<ul class="simple">
+<li><p>With KLC, the data exist as inert files on disk – there is no general way to load and query the data. Instead, we need to write code to load the data into memory, and then query it. This is a very powerful approach, but it requires some programming.</p></li>
+<li><p>What kinds of program you write depends on the <em>format</em> of the data files. There is no single format. Some are text-based (CSV, JSON, XML), some are binary (Parquet, Avro, ORC).</p></li>
+</ul>
 <a class="reference internal image-reference" href="_images/data-formats.png"><img alt="data-formats" class="align-center" src="_images/data-formats.png" style="width: 500px;" /></a>
 </section>
 
