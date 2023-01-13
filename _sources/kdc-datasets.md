@@ -4,7 +4,7 @@
 KDC (Kellogg Data Center) will be retired this Summer. At that time, the acronym "KDC" will take on a new meaning, and will refer to the The <span style="color:purple">*Kellogg Data Cloud*</span>.
 ```
 
-```{admonition} Why is this happening?
+```{admonition} How does this change things?
 :class: tip
 Accessing data will be similar, but the underlying infrastructure will be different. The Kellogg Data Cloud is a cloud-based data storage and compute environment. The cloud environment will offer many advantages in scalability, computating resources, and cost.
 ```
