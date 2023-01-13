@@ -130,6 +130,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="data-scaling.html">
+   Scaling Queries
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="data-automation.html">
    Data Workflow Automation
   </a>
@@ -321,14 +326,17 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="kdc-datasets">
 <h1>KDC Datasets<a class="headerlink" href="#kdc-datasets" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
-<li><p>“KDC” is an ambiguous acronym. It can refer to the Kellogg Data Center (KDC) or the Kellogg Data Cloud (KDC). We will use the term “KDC” to refer to the Kellogg Data Cloud (KDC) and “KDC2” to refer to the Kellogg Data Center (KDC).</p></li>
-<li><p>(<a class="reference external" href="https://www.kellogg.northwestern.edu/research-support/computing/kellogg-data-center.aspx">KDC02</a>) is a Microsoft SQL Server is a relational database management system that is currently available to Kellogg faculty and students.</p></li>
-<li><p>KDC02 is nearing the end of it’s life and is being replaced by a cloud-based solution (“KDC”).</p></li>
-<li><p>However, there are many similarities in how data will be accessed, including the ability to use SQL clients and ODBC-based connections from software like R, Python, and Stata.</p></li>
+<li><p>“KDC” is temporarily an ambiguous acronym. It can refer to the Kellogg Data Center or the Kellogg Data Cloud.</p></li>
+<li><p>The <a class="reference external" href="https://www.kellogg.northwestern.edu/research-support/computing/kellogg-data-center.aspx">Kellogg Data Center</a> is a Microsoft SQL Server is a relational database management system that is currently available to Kellogg faculty and students.</p></li>
 </ul>
 <p><img alt="Data Workflow" src="_images/data-pipeline-sql-server.png" /></p>
+<ul class="simple">
+<li><p>Kellogg Data Center is nearing the end of its life and is being replaced by a cloud-based solution, the “Kellogg Data Cloud”. When this happens later this year, the term will no longer be ambiguous and “KDC” will always refer to the Kellogg Data Cloud.</p></li>
+</ul>
 <p><img alt="Data Workflow" src="_images/data-pipeline-aws.png" /></p>
-<p><img alt="Data Workflow" src="_images/apache-parquet-detailed.png" /></p>
+<ul class="simple">
+<li><p>There are many similarities between these two systems, including the ability to use SQL clients and ODBC-based connections from software like R, Python, and Stata. The cloud-based version has the advantage of being able to handle larger datasets, and allowing us to take advantage of the many tools available in the cloud.</p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
