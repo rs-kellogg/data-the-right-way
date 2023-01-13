@@ -12,9 +12,9 @@ Highlighting a dataset will pop up a "Data Card" providing many details on the d
 ```{note}
 Datasets hosted by Kellogg can be found in several places, three of which we will describe here:
 
-* The [Kellogg Linux Cluster](https://www.kellogg.northwestern.edu/research-support/computing/kellogg-linux-cluster.aspx)
-* The [Kellog Data Center](https://www.kellogg.northwestern.edu/research-support/computing/kellogg-data-center.aspx)
-* [The Kellog Data Cloud](https://nu-sso.awsapps.com/start/#/)
+* [Kellogg Linux Cluster](https://www.kellogg.northwestern.edu/research-support/computing/kellogg-linux-cluster.aspx)
+* [Kellog Data Center](https://www.kellogg.northwestern.edu/research-support/computing/kellogg-data-center.aspx)
+* [Kellog Data Cloud](https://nu-sso.awsapps.com/start/#/)
 ```
 
 ```{warning}
