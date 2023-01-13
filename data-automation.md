@@ -1,3 +1,4 @@
-# Data Workflow Automation
+# Data Workflows
 
 
+![Data Workflow](images/data-automation.png)
