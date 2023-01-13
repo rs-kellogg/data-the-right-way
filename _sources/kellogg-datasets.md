@@ -4,7 +4,8 @@ Kellogg hosts many datasets. The [Kellogg Research Support website](https://www.
 
 
 ```{note}
-Highlighting a dataset will pop up a "Data Card" providing many details on the dataset and how to acces it
+Highlighting a dataset will pop up a "Data Card" providing many details on the dataset and how to access it. Here is the data cad for the Comscore dataset:
+```
 ![Comscore Data Card](images/comscore-data-card.png)
 ```
 
