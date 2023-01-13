@@ -25,3 +25,5 @@ Accessing data will be similar, but the underlying infrastructure will be differ
 ```
 
 * There are many similarities between these two systems, including the ability to use SQL clients and ODBC-based connections from software like R, Python, and Stata. The cloud-based version has the advantage of being able to handle larger datasets, and allowing us to take advantage of the many tools available in the cloud.
+
+* Example: firing up an EC2 instance with GPUs for machine learning

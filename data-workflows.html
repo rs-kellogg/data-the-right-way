@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Data the Right Way &#8212; Data the Right Way</title>
+    <title>Data Workflows &#8212; Data the Right Way</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Kellogg Datasets" href="kellogg-datasets.html" />
+    <link rel="next" title="Summary" href="summary.html" />
+    <link rel="prev" title="Scaling Queries" href="data-scaling.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -106,13 +107,13 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Data the Right Way
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="kellogg-datasets.html">
    Kellogg Datasets
@@ -133,8 +134,8 @@ const thebe_selector_output = ".output, .cell_output"
    Scaling Queries
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data-workflows.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Data Workflows
   </a>
  </li>
@@ -233,7 +234,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdata-workflows.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -261,7 +262,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/intro.md"
+        <a href="_sources/data-workflows.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -310,7 +311,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Data the Right Way</h1>
+                <h1>Data Workflows</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -322,25 +323,13 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="data-the-right-way">
-<h1>Data the Right Way<a class="headerlink" href="#data-the-right-way" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-workflows">
+<h1>Data Workflows<a class="headerlink" href="#data-workflows" title="Permalink to this headline">#</a></h1>
+<p><img alt="Data Workflow" src="_images/data-automation.png" /></p>
 <ul class="simple">
-<li><p>These workshop materials cover some highlights on how to work with datasets at Kellogg.</p></li>
-<li><p>We will look at how to query datasets hosted Kellogg Data Cloud (KDC), as well as datasets hosted on the Kellogg Linux Cluster (KLC)</p></li>
-<li><p>When datasets are small, it doesn’t much matter how we access them. We can pretend that resources don’t matter. But when they get really large, queries can take a very long time, or can even fail to complete. We will look at strategies for working with large datasets.</p></li>
-<li><p>We will also provide some tips on how to automate data workflows in order to make your research more easily reproducible. Your future self will thank you!</p></li>
+<li><p>Open Science related issues – data extracts/summaries</p></li>
+<li><p>Testing your workflow, modular workflow</p></li>
 </ul>
-<p><img alt="Data Workflow" src="_images/data-pipeline.png" /></p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="kellogg-datasets.html">Kellogg Datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="kdc-datasets.html">KDC Datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="klc-datasets.html">KLC Datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data-scaling.html">Scaling Queries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data-workflows.html">Data Workflows</a></li>
-<li class="toctree-l1"><a class="reference internal" href="summary.html">Summary</a></li>
-</ul>
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -370,10 +359,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="kellogg-datasets.html" title="next page">
+    <a class='left-prev' id="prev-link" href="data-scaling.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Scaling Queries</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="summary.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Kellogg Datasets</p>
+        <p class="prev-next-title">Summary</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
