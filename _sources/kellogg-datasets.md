@@ -6,8 +6,8 @@ Kellogg hosts many datasets. The [Kellogg Research Support website](https://www.
 ```{note}
 Highlighting a dataset will pop up a "Data Card" providing many details on the dataset and how to access it. Here is the data card for the Comscore dataset:
 ```
+
 ![Comscore Data Card](images/comscore-data-card.png)
-```
 
 ```{note}
 Datasets hosted by Kellogg can be found in several places, three of which we will describe here:
