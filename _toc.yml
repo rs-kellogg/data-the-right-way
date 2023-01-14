@@ -8,5 +8,5 @@ chapters:
 - file: kdc-datasets
 - file: klc-datasets
 - file: data-scaling
-- file: data-automation
+- file: data-workflows
 - file: summary
