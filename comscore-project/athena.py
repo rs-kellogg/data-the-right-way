@@ -10,7 +10,6 @@ from rich import console as cons
 console = cons.Console(style="green on black")
 
 
-
 # -----------------------------------------------------------------------------
 def gen_dates(start_date: dt.datetime, end_date: dt.datetime) -> List:
     num_days = (end_date - start_date).days + 1

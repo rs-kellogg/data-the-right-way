@@ -1,0 +1,88 @@
+"date","query_id","query_sql","state"
+"2019-01-01","82a9e721-1b46-4234-85c8-52bee832a4bb","UNLOAD (
+SELECT 
+    u.machine_id,
+    u.url_idc, 
+    u.person_id, 
+    u.ss2k, 
+    u.time_id, 
+    u.domain_name, 
+    u.url_host, 
+    u.url_dir, 
+    u.url_page, 
+    u.url_refer_domain, 
+    u.url_refer_host, 
+    u.url_refer_dir, 
+    u.url_refer_page, 
+    u.mimetype, 
+    u.http_rc, 
+    u.keywords, 
+    u.html_title, 
+    u.pattern_id
+FROM ""comscore"".""url"" as u
+WHERE 
+    u.year='2019'
+    and u.month='01'
+    and u.day='01'
+    and (u.domain_name LIKE '%twitch%')
+) 
+TO 's3://kdc-comscore/parquet-extracts/url_domain_twitch/year=2019/month=01/day=01' 
+WITH ( format = 'parquet', compression = 'snappy' )","FAILED"
+"2019-01-02","230d054a-7738-4fd9-bc13-d1fe6215172a","UNLOAD (
+SELECT 
+    u.machine_id,
+    u.url_idc, 
+    u.person_id, 
+    u.ss2k, 
+    u.time_id, 
+    u.domain_name, 
+    u.url_host, 
+    u.url_dir, 
+    u.url_page, 
+    u.url_refer_domain, 
+    u.url_refer_host, 
+    u.url_refer_dir, 
+    u.url_refer_page, 
+    u.mimetype, 
+    u.http_rc, 
+    u.keywords, 
+    u.html_title, 
+    u.pattern_id
+FROM ""comscore"".""url"" as u
+WHERE 
+    u.year='2019'
+    and u.month='01'
+    and u.day='02'
+    and (u.domain_name LIKE '%twitch%')
+) 
+TO 's3://kdc-comscore/parquet-extracts/url_domain_twitch/year=2019/month=01/day=02' 
+WITH ( format = 'parquet', compression = 'snappy' )","FAILED"
+"2019-01-03","21c89f90-d3eb-4e60-8b97-89ca26780045","UNLOAD (
+SELECT 
+    u.machine_id,
+    u.url_idc, 
+    u.person_id, 
+    u.ss2k, 
+    u.time_id, 
+    u.domain_name, 
+    u.url_host, 
+    u.url_dir, 
+    u.url_page, 
+    u.url_refer_domain, 
+    u.url_refer_host, 
+    u.url_refer_dir, 
+    u.url_refer_page, 
+    u.mimetype, 
+    u.http_rc, 
+    u.keywords, 
+    u.html_title, 
+    u.pattern_id
+FROM ""comscore"".""url"" as u
+WHERE 
+    u.year='2019'
+    and u.month='01'
+    and u.day='03'
+    and (u.domain_name LIKE '%twitch%')
+) 
+TO 's3://kdc-comscore/parquet-extracts/url_domain_twitch/year=2019/month=01/day=03' 
+WITH ( format = 'parquet', compression = 'snappy' )","FAILED"
