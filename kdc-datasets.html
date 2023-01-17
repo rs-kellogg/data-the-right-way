@@ -329,12 +329,22 @@ title="Print to PDF"
 <li><p>The <a class="reference external" href="https://www.kellogg.northwestern.edu/research-support/computing/kellogg-data-center.aspx">Kellogg Data Center</a> is a Microsoft SQL Server relational database management system that is currently available to Kellogg faculty and students.</p></li>
 </ul>
 <p><img alt="Data Workflow" src="_images/data-pipeline-sql-server.png" /></p>
+<ul class="simple">
+<li><p>KDC is accessible from a <em>SQL</em> client</p></li>
+<li><p>This could be a dedicated SQL client, such as <a class="reference external" href="https://www.jetbrains.com/datagrip/">Datagrip</a> or <a class="reference external" href="https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16">MS SSMS</a> or many, many other choices</p></li>
+<li><p>It could also be a programmatic connection via <a class="reference external" href="https://en.wikipedia.org/wiki/Open_Database_Connectivity">ODBC</a></p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/kdc-ssms-snapshot.png"><img alt="data-formats" class="align-center" src="_images/kdc-ssms-snapshot.png" style="width: 700px;" /></a>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>KDC (Kellogg Data Center) will be retired this Summer. At that time, the acronym “KDC” will take on a new meaning, and will refer to the The <span style="color:purple"><em>Kellogg Data Cloud</em></span>.</p>
+<p><img alt="Data Workflow" src="_images/sql-server-2-aws.png" /></p>
 </div>
-<a class="reference internal image-reference" href="_images/sql-server-2-aws.png"><img alt="sql-server-2-aws" class="align-center" src="_images/sql-server-2-aws.png" style="width: 500px;" /></a>
-<a class="reference internal image-reference" href="_images/sql-server-2-aws.png"><img alt="aws-consol-home" class="align-center" src="_images/sql-server-2-aws.png" style="width: 500px;" /></a>
+<div class="admonition-benefits-of-moving-to-the-cloud admonition">
+<p class="admonition-title">Benefits of moving to the cloud</p>
+<p>Moving data to the cloud unlocks a huge toolset for data processing, including handling of very large scale datasets, image processing, text processing, and GPUs for deep learning.</p>
+<p><img alt="Data Workflow" src="_images/aws-console-home.png" /></p>
+</div>
 <ul class="simple">
 <li><p>The <a class="reference external" href="https://nu-sso.awsapps.com/start/#/">Kellogg Data Cloud</a> is a cloud-based data storage and compute environment. Currently we are focused on using Amazon Web Services (AWS) for storage and compute, though we may expand to other cloud providers in the future. We will focus on using <a class="reference external" href="https://docs.aws.amazon.com/athena/latest/ug/what-is.html">AWS Athena</a> for querying data in the Kellogg Data Cloud.</p></li>
 </ul>
@@ -345,8 +355,9 @@ title="Print to PDF"
 </div>
 <ul class="simple">
 <li><p>There are many similarities between these two systems, including the ability to use SQL clients and ODBC-based connections from software like R, Python, and Stata. The cloud-based version has the advantage of being able to handle larger datasets, and allowing us to take advantage of the many tools available in the cloud.</p></li>
-<li><p>Example: firing up an EC2 instance with GPUs for machine learning (AWS Deep Learning AMIs)[<a class="reference external" href="https://aws.amazon.com/releasenotes/aws-deep-learning-ami-catalog/">https://aws.amazon.com/releasenotes/aws-deep-learning-ami-catalog/</a>]</p></li>
-<li><p>Example: Running Apache Spark</p></li>
+<li><p>Example: AWS web-based query console removes need to install and connect through a 3rd party tool</p></li>
+<li><p>Example: firing up an EC2 instance with GPUs for machine learning <a class="reference external" href="https://aws.amazon.com/releasenotes/aws-deep-learning-ami-catalog/">AWS Deep Learning AMIs</a></p></li>
+<li><p>Example: Running Apache Spark to handle very large scale data workloads.</p></li>
 </ul>
 </section>
 
