@@ -1,1 +1,2 @@
-test: test
+parquet_path: ../output/parquet
+log_path: ../output/logs

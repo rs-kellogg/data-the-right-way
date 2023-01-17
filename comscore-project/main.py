@@ -53,7 +53,11 @@ def run_daily_sql_query(
 
     results_df = pd.DataFrame(rows, columns=['date', 'query_id', "query_sql", "state"])
     now = f"{dt.datetime.now()}".replace(" ", "_")
-    results_df.to_csv(f"{out_dir/'query_results_'}{now}.csv", quoting=csv.QUOTE_NONNUMERIC, index=False)
+    results_df.to_csv(
+        f"{out_dir/'query_results_'}{now}.csv", 
+        quoting=csv.QUOTE_NONNUMERIC, 
+        index=False
+    )
 
 
 # -----------------------------------------------------------------------------
