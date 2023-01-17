@@ -1,0 +1,888 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>&lt;no title&gt; &#8212; Data the Right Way</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Data the Right Way</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Data the Right Way
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../kellogg-datasets.html">
+   Kellogg Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../kdc-datasets.html">
+   KDC Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../klc-datasets.html">
+   KLC Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data-scaling.html">
+   Scaling Queries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../data-workflows.html">
+   Data Workflows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../summary.html">
+   Summary
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/comscore-project/comscore-filter-domain.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fcomscore-project/comscore-filter-domain.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/comscore-project/comscore-filter-domain.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1><no title></h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">jinja2</span>
+<span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">BaseLoader</span>
+<span class="kn">import</span> <span class="nn">athena</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sql_template</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">UNLOAD (</span>
+<span class="s2">SELECT </span>
+<span class="s2">    u.machine_id,</span>
+<span class="s2">    u.url_idc, </span>
+<span class="s2">    u.person_id, </span>
+<span class="s2">    u.ss2k, </span>
+<span class="s2">    u.time_id, </span>
+<span class="s2">    u.domain_name, </span>
+<span class="s2">    u.url_host, </span>
+<span class="s2">    u.url_dir, </span>
+<span class="s2">    u.url_page, </span>
+<span class="s2">    u.url_refer_domain, </span>
+<span class="s2">    u.url_refer_host, </span>
+<span class="s2">    u.url_refer_dir, </span>
+<span class="s2">    u.url_refer_page, </span>
+<span class="s2">    u.mimetype, </span>
+<span class="s2">    u.http_rc, </span>
+<span class="s2">    u.keywords, </span>
+<span class="s2">    u.html_title, </span>
+<span class="s2">    u.pattern_id</span>
+<span class="s2">FROM &quot;comscore&quot;.&quot;url&quot; as u</span>
+<span class="s2">WHERE </span>
+<span class="s2">    u.year=&#39;{{year}}&#39;</span>
+<span class="s2">    and u.month=&#39;{{month}}&#39;</span>
+<span class="s2">    and u.day=&#39;{{day}}&#39;</span>
+<span class="s2">    and (u.domain_name LIKE &#39;%twitch%&#39;)</span>
+<span class="s2">) </span>
+<span class="s2">TO &#39;s3://kdc-comscore/parquet-extracts/url_{{domain}}/year={{year}}/month={{month}}/day={{day}}&#39; </span>
+<span class="s2">WITH ( format = &#39;parquet&#39;, compression = &#39;snappy&#39; )</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">template</span> <span class="o">=</span> <span class="n">Environment</span><span class="p">(</span><span class="n">loader</span><span class="o">=</span><span class="n">BaseLoader</span><span class="p">())</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span><span class="n">sql_template</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">athena</span><span class="o">.</span><span class="n">run_daily</span><span class="p">(</span>
+    <span class="s2">&quot;kdc-admin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;us-east-2&quot;</span><span class="p">,</span>
+    <span class="n">template</span><span class="p">,</span>
+    <span class="n">start_date</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="n">end_date</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="n">database</span> <span class="o">=</span> <span class="s2">&quot;comscore&quot;</span><span class="p">,</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">},</span>
+    <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;number of results: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ProfileNotFound</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="n">File</span> <span class="o">&lt;</span><span class="n">timed</span> <span class="n">exec</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">1</span>
+
+<span class="nn">File ~\Code\kellogg\data-the-right-way\comscore-project\athena.py:78,</span> in <span class="ni">run_daily</span><span class="nt">(profile, region, template, start_date, end_date, database, batch_size, args)</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span> <span class="k">def</span> <span class="nf">run_daily</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>     <span class="n">profile</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>     <span class="n">region</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span>     <span class="c1"># create athena client</span>
+<span class="ne">---&gt; </span><span class="mi">78</span>     <span class="n">session</span> <span class="o">=</span> <span class="n">boto3</span><span class="o">.</span><span class="n">Session</span><span class="p">(</span><span class="n">profile_name</span><span class="o">=</span><span class="n">profile</span><span class="p">,</span> <span class="n">region_name</span><span class="o">=</span><span class="n">region</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span>     <span class="n">client</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">client</span><span class="p">(</span><span class="s1">&#39;athena&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span>     <span class="c1"># generate the list of dates from start to end</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\boto3\session.py:90,</span> in <span class="ni">Session.__init__</span><span class="nt">(self, aws_access_key_id, aws_secret_access_key, aws_session_token, region_name, botocore_session, profile_name)</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">set_config_variable</span><span class="p">(</span><span class="s1">&#39;region&#39;</span><span class="p">,</span> <span class="n">region_name</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span> <span class="bp">self</span><span class="o">.</span><span class="n">resource_factory</span> <span class="o">=</span> <span class="n">ResourceFactory</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">get_component</span><span class="p">(</span><span class="s1">&#39;event_emitter&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">90</span> <span class="bp">self</span><span class="o">.</span><span class="n">_setup_loader</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span> <span class="bp">self</span><span class="o">.</span><span class="n">_register_default_handlers</span><span class="p">()</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\boto3\session.py:131,</span> in <span class="ni">Session._setup_loader</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span> <span class="k">def</span> <span class="nf">_setup_loader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span><span class="sd">     Setup loader paths so that we can load resources.</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">131</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_loader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">get_component</span><span class="p">(</span><span class="s1">&#39;data_loader&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_loader</span><span class="o">.</span><span class="n">search_paths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span>         <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\botocore\session.py:796,</span> in <span class="ni">Session.get_component</span><span class="nt">(self, name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">794</span> <span class="k">def</span> <span class="nf">get_component</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">795</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">796</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_components</span><span class="o">.</span><span class="n">get_component</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">797</span>     <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">798</span>         <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;endpoint_resolver&#39;</span><span class="p">,</span> <span class="s1">&#39;exceptions_factory&#39;</span><span class="p">]:</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\botocore\session.py:1108,</span> in <span class="ni">ComponentLocator.get_component</span><span class="nt">(self, name)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1106</span> <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deferred</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1107</span>     <span class="n">factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deferred</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+<span class="ne">-&gt; </span><span class="mi">1108</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_components</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">factory</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1109</span>     <span class="c1"># Only delete the component from the deferred dict after</span>
+<span class="g g-Whitespace">   </span><span class="mi">1110</span>     <span class="c1"># successfully creating the object from the factory as well as</span>
+<span class="g g-Whitespace">   </span><span class="mi">1111</span>     <span class="c1"># injecting the instantiated value into the _components dict.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1112</span>     <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">_deferred</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\botocore\session.py:193,</span> in <span class="ni">Session._register_data_loader.&lt;locals&gt;.&lt;lambda&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">190</span> <span class="k">def</span> <span class="nf">_register_data_loader</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_components</span><span class="o">.</span><span class="n">lazy_register_component</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">192</span>         <span class="s1">&#39;data_loader&#39;</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">193</span>         <span class="k">lambda</span><span class="p">:</span> <span class="n">create_loader</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_config_variable</span><span class="p">(</span><span class="s1">&#39;data_path&#39;</span><span class="p">)),</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span>     <span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\botocore\session.py:317,</span> in <span class="ni">Session.get_config_variable</span><span class="nt">(self, logical_name, methods)</span>
+<span class="g g-Whitespace">    </span><span class="mi">313</span> <span class="k">if</span> <span class="n">methods</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">314</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_config_variable_with_custom_methods</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">315</span>         <span class="n">logical_name</span><span class="p">,</span> <span class="n">methods</span>
+<span class="g g-Whitespace">    </span><span class="mi">316</span>     <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">317</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_component</span><span class="p">(</span><span class="s1">&#39;config_store&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_config_variable</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">318</span>     <span class="n">logical_name</span>
+<span class="g g-Whitespace">    </span><span class="mi">319</span> <span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\botocore\configprovider.py:426,</span> in <span class="ni">ConfigValueStore.get_config_variable</span><span class="nt">(self, logical_name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">424</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">425</span> <span class="n">provider</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mapping</span><span class="p">[</span><span class="n">logical_name</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">426</span> <span class="k">return</span> <span class="n">provider</span><span class="o">.</span><span class="n">provide</span><span class="p">()</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\botocore\configprovider.py:628,</span> in <span class="ni">ChainProvider.provide</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">621</span> <span class="sd">&quot;&quot;&quot;Provide the value from the first provider to return non-None.</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span><span class="sd"> Each provider in the chain has its provide method called. The first</span>
+<span class="g g-Whitespace">    </span><span class="mi">624</span><span class="sd"> one in the chain to return a non-None value is the returned from the</span>
+<span class="g g-Whitespace">    </span><span class="mi">625</span><span class="sd"> ChainProvider. When no non-None value is found, None is returned.</span>
+<span class="g g-Whitespace">    </span><span class="mi">626</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">627</span> <span class="k">for</span> <span class="n">provider</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_providers</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">628</span>     <span class="n">value</span> <span class="o">=</span> <span class="n">provider</span><span class="o">.</span><span class="n">provide</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">629</span>     <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">630</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_convert_type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\botocore\configprovider.py:718,</span> in <span class="ni">ScopedConfigProvider.provide</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">716</span> <span class="k">def</span> <span class="nf">provide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">717</span>     <span class="sd">&quot;&quot;&quot;Provide a value from a config file property.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">718</span>     <span class="n">scoped_config</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_session</span><span class="o">.</span><span class="n">get_scoped_config</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">719</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_config_var_name</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">720</span>         <span class="n">section_config</span> <span class="o">=</span> <span class="n">scoped_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_config_var_name</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\botocore\session.py:416,</span> in <span class="ni">Session.get_scoped_config</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">411</span>     <span class="k">return</span> <span class="n">profile_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="p">{})</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span> <span class="k">elif</span> <span class="n">profile_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">profile_map</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">413</span>     <span class="c1"># Otherwise if they specified a profile, it has to</span>
+<span class="g g-Whitespace">    </span><span class="mi">414</span>     <span class="c1"># exist (even if it&#39;s the default profile) otherwise</span>
+<span class="g g-Whitespace">    </span><span class="mi">415</span>     <span class="c1"># we complain.</span>
+<span class="ne">--&gt; </span><span class="mi">416</span>     <span class="k">raise</span> <span class="n">ProfileNotFound</span><span class="p">(</span><span class="n">profile</span><span class="o">=</span><span class="n">profile_name</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">417</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">418</span>     <span class="k">return</span> <span class="n">profile_map</span><span class="p">[</span><span class="n">profile_name</span><span class="p">]</span>
+
+<span class="ne">ProfileNotFound</span>: The config profile (kdc-admin) could not be found
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> aws s3 sync s3://kdc-comscore/parquet-extracts ./output/parquet --profile kdc-admin
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The config profile (kdc-admin) could not be found
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;./output/parquet/url_domain_twitch&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;./output/parquet/url_domain_twitch&quot;</span><span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\pandas\io\parquet.py:503,</span> in <span class="ni">read_parquet</span><span class="nt">(path, engine, columns, storage_options, use_nullable_dtypes, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">456</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">457</span><span class="sd"> Load a parquet object from the file path, returning a DataFrame.</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">499</span><span class="sd"> DataFrame</span>
+<span class="g g-Whitespace">    </span><span class="mi">500</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">501</span> <span class="n">impl</span> <span class="o">=</span> <span class="n">get_engine</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">503</span> <span class="k">return</span> <span class="n">impl</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span>     <span class="n">path</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">505</span>     <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">507</span>     <span class="n">use_nullable_dtypes</span><span class="o">=</span><span class="n">use_nullable_dtypes</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">508</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">509</span> <span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\pandas\io\parquet.py:244,</span> in <span class="ni">PyArrowImpl.read</span><span class="nt">(self, path, columns, use_nullable_dtypes, storage_options, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span> <span class="k">if</span> <span class="n">manager</span> <span class="o">==</span> <span class="s2">&quot;array&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">242</span>     <span class="n">to_pandas_kwargs</span><span class="p">[</span><span class="s2">&quot;split_blocks&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># type: ignore[assignment]</span>
+<span class="ne">--&gt; </span><span class="mi">244</span> <span class="n">path_or_handle</span><span class="p">,</span> <span class="n">handles</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;filesystem&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_get_path_or_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">245</span>     <span class="n">path</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span>     <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;filesystem&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span>     <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">248</span>     <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;rb&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">251</span>     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">parquet</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">252</span>         <span class="n">path_or_handle</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">    </span><span class="mi">253</span>     <span class="p">)</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">(</span><span class="o">**</span><span class="n">to_pandas_kwargs</span><span class="p">)</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\pandas\io\parquet.py:102,</span> in <span class="ni">_get_path_or_handle</span><span class="nt">(path, fs, storage_options, mode, is_dir)</span>
+<span class="g g-Whitespace">     </span><span class="mi">92</span> <span class="n">handles</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span> <span class="k">if</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="ow">not</span> <span class="n">fs</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_dir</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>     <span class="c1"># fsspec resources can also point to directories</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>     <span class="c1"># this branch is used for example when reading from non-fsspec URLs</span>
+<span class="ne">--&gt; </span><span class="mi">102</span>     <span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>         <span class="n">path_or_handle</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">is_text</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">storage_options</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="n">fs</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span>     <span class="n">path_or_handle</span> <span class="o">=</span> <span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~\miniconda3\lib\site-packages\pandas\io\common.py:865,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">856</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">857</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">861</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">862</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">863</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">864</span>         <span class="c1"># Binary mode</span>
+<span class="ne">--&gt; </span><span class="mi">865</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">866</span>     <span class="n">handles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="c1"># Convert BytesIO or file objects passed with an encoding</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./output/parquet/url_domain_twitch&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(873668, 21)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>machine_id</th>
+      <th>url_idc</th>
+      <th>person_id</th>
+      <th>ss2k</th>
+      <th>time_id</th>
+      <th>domain_name</th>
+      <th>url_host</th>
+      <th>url_dir</th>
+      <th>url_page</th>
+      <th>url_refer_domain</th>
+      <th>...</th>
+      <th>url_refer_dir</th>
+      <th>url_refer_page</th>
+      <th>mimetype</th>
+      <th>http_rc</th>
+      <th>keywords</th>
+      <th>html_title</th>
+      <th>pattern_id</th>
+      <th>year</th>
+      <th>month</th>
+      <th>day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>248349067</td>
+      <td>HNN7xYtNAgxFKQBsiDVyab</td>
+      <td>452606243</td>
+      <td>599780225</td>
+      <td>6941</td>
+      <td>twitch.tv</td>
+      <td>pubsub-edge.twitch.tv</td>
+      <td>/</td>
+      <td>v1</td>
+      <td>None</td>
+      <td>...</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>101</td>
+      <td>SECURE</td>
+      <td>SECURE</td>
+      <td>10355136</td>
+      <td>2019</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>263072658</td>
+      <td>mnOnzogikHbGW91fDq5i93</td>
+      <td>434113017</td>
+      <td>599786289</td>
+      <td>6941</td>
+      <td>twitch.tv</td>
+      <td>client-event-reporter.twitch.tv</td>
+      <td>/</td>
+      <td>/</td>
+      <td>None</td>
+      <td>...</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>200</td>
+      <td>SECURE</td>
+      <td>SECURE</td>
+      <td>10355136</td>
+      <td>2019</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>218778557</td>
+      <td>2OC8FWVwQumUMTh51$tLf0</td>
+      <td>392721004</td>
+      <td>599746847</td>
+      <td>6941</td>
+      <td>twitch.tv</td>
+      <td>pubsub-edge.twitch.tv</td>
+      <td>/</td>
+      <td>/</td>
+      <td>None</td>
+      <td>...</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>200</td>
+      <td>SECURE</td>
+      <td>SECURE</td>
+      <td>10355136</td>
+      <td>2019</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>218778557</td>
+      <td>Mqoo7ZXs4MNoHwDsnHxp0e</td>
+      <td>392721004</td>
+      <td>599752699</td>
+      <td>6941</td>
+      <td>twitch.tv</td>
+      <td>pubsub-edge.twitch.tv</td>
+      <td>/</td>
+      <td>/</td>
+      <td>None</td>
+      <td>...</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>200</td>
+      <td>SECURE</td>
+      <td>SECURE</td>
+      <td>10355136</td>
+      <td>2019</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>218778557</td>
+      <td>UwWxtCLDAHbWm95QD7vIf0</td>
+      <td>392721004</td>
+      <td>599724558</td>
+      <td>6941</td>
+      <td>twitch.tv</td>
+      <td>pubsub-edge.twitch.tv</td>
+      <td>/</td>
+      <td>/</td>
+      <td>None</td>
+      <td>...</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>200</td>
+      <td>SECURE</td>
+      <td>SECURE</td>
+      <td>10355136</td>
+      <td>2019</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 21 columns</p>
+</div></div></div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./comscore-project"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Kellogg Research Support<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

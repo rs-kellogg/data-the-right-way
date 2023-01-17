@@ -14,6 +14,12 @@ KDC (Kellogg Data Center) will be retired this Summer. At that time, the acronym
     :align: center
 ```
 
+```{image} ./images/sql-server-2-aws.png
+    :alt: aws-consol-home
+    :width: 500px
+    :align: center
+```
+
 
 *  The [Kellogg Data Cloud](https://nu-sso.awsapps.com/start/#/) is a cloud-based data storage and compute environment. Currently we are focused on using Amazon Web Services (AWS) for storage and compute, though we may expand to other cloud providers in the future. We will focus on using [AWS Athena](https://docs.aws.amazon.com/athena/latest/ug/what-is.html) for querying data in the Kellogg Data Cloud.
 
