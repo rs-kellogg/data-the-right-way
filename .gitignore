@@ -1,6 +1,7 @@
 # Jupyterbook output
 _build/
 .ipyslides_assets/
+output/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
