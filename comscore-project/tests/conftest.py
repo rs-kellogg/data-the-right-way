@@ -13,7 +13,7 @@ def config():
     with open(config_file) as f:
         conf = yaml.load(f, Loader=yaml.FullLoader)
         return conf
-    
+
     
 @pytest.fixture(scope="session")
 def log_path(config):

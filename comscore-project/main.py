@@ -16,7 +16,7 @@ console = cons.Console(style="green on black")
 
 # -----------------------------------------------------------------------------
 @app.command()
-def run_daily_sql_query(
+def run_daily(
         aws_profile: str = typer.Argument(..., help="AWS profile to use."),
     template_file: Path = typer.Argument(..., help="SQL template file path"),
     start_date: str = typer.Argument(..., help="start date in format yyyy-mmm-dd"),
@@ -58,6 +58,25 @@ def run_daily_sql_query(
         quoting=csv.QUOTE_NONNUMERIC, 
         index=False
     )
+
+
+# -----------------------------------------------------------------------------
+@app.command()
+def create_plots(
+    parquet_dir: Path = typer.Argument(..., help="Directory holding parquet files"),
+    out_dir: Optional[Path] = typer.Option(
+        Path("."),
+        "--dir",
+        help="The directory where the output output files will be created. Defaults to the current working directory",
+    ),
+):
+    df = pd.read_parquet(parquet_dir)
+    
+    df.groupby("domain_name")['domain_name'].count().sort_values(ascending=False).to_csv(out_dir/"domain_name_counts.csv", index=True)
+
+    df_twitch_tv = df[df['domain_name'] == 'twitch.tv']
+    day_counts = df_twitch_tv.groupby(['day'])[['day']].count()
+    day_counts.plot.line().get_figure().savefig(out_dir/'day_counts.png')
 
 
 # -----------------------------------------------------------------------------

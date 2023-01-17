@@ -13,6 +13,15 @@ def test_queries_for_failures(log_path):
     assert len(log_files) > 0
     log_df = pd.read_csv(log_files[-1])
     states = list(log_df['state'])
-    num_successes = states.count("SUCCESS")
+    num_successes = states.count("SUCCEEDED")
     num_failures = states.count("FAILED")
-    assert num_successes == len(states), f"The last SQL run had {num_failures} failed queries. Check the log file {log_files[-1]} for more details"
+    assert num_successes == len(states), f"The last SQL run had {num_failures} failed queries, and {num_successes} successful queries. Check the log file {log_files[-1]} for more details"
+    
+
+
+def test_parquet_for_sanity(parquet_path):
+    assert (parquet_path/"url_domain_twitch").exists()
+    df = pd.read_parquet(parquet_path/"url_domain_twitch")
+    twitch_df = df[df['domain_name'] == 'twitch.tv']
+    assert(len(twitch_df)) == 1_437_896
+
