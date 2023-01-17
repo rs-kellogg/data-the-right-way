@@ -8,15 +8,19 @@ Highlighting a dataset will pop up a "Data Card" providing many details on the d
 ```
 
 ```{note}
-![Comscore Data Card](images/comscore-data-card.png)
-```
-
-```{note}
 Datasets hosted by Kellogg can be found in several places, three of which we will describe here:
 
 * [Kellogg Linux Cluster](https://www.kellogg.northwestern.edu/research-support/computing/kellogg-linux-cluster.aspx)
 * [Kellog Data Center](https://www.kellogg.northwestern.edu/research-support/computing/kellogg-data-center.aspx)
 * [Kellog Data Cloud](https://nu-sso.awsapps.com/start/#/)
+```
+
+```{note}
+![Comscore Data Card](images/comscore-data-card.png)
+```
+
+```{note}
+![Comscore Data Card](images/edgar-data-card.png)
 ```
 
 ```{warning}

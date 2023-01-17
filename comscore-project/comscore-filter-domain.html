@@ -381,6 +381,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
 <span class="o">%</span><span class="k">autoreload</span> 2
+<span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
 </div>
@@ -389,10 +390,16 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">jinja2</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">from</span> <span class="nn">jinja2</span> <span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">BaseLoader</span>
 <span class="kn">import</span> <span class="nn">athena</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.max.columns&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -427,7 +434,7 @@ title="Print to PDF"
 <span class="s2">    and u.day=&#39;{{day}}&#39;</span>
 <span class="s2">    and (u.domain_name LIKE &#39;%twitch%&#39;)</span>
 <span class="s2">) </span>
-<span class="s2">TO &#39;s3://kdc-comscore/parquet-extracts/url_{{domain}}/year={{year}}/month={{month}}/day={{day}}&#39; </span>
+<span class="s2">TO &#39;s3://kdc-comscore/parquet-extracts/url_twitch_test/year={{year}}/month={{month}}/day={{day}}&#39; </span>
 <span class="s2">WITH ( format = &#39;parquet&#39;, compression = &#39;snappy&#39; )</span>
 <span class="s2">&quot;&quot;&quot;</span>
 
@@ -445,7 +452,7 @@ title="Print to PDF"
     <span class="s2">&quot;us-east-2&quot;</span><span class="p">,</span>
     <span class="n">template</span><span class="p">,</span>
     <span class="n">start_date</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="n">end_date</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="n">end_date</span> <span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span>
     <span class="n">database</span> <span class="o">=</span> <span class="s2">&quot;comscore&quot;</span><span class="p">,</span>
     <span class="n">args</span> <span class="o">=</span> <span class="p">{</span>
     <span class="p">},</span>
@@ -562,7 +569,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> aws s3 sync s3://kdc-comscore/parquet-extracts ./output/parquet --profile kdc-admin
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span> aws s3 sync s3://kdc-comscore/parquet-extracts/url_twitch_test ./output/parquet/url_twitch_test --profile kdc-admin
 </pre></div>
 </div>
 </div>
@@ -574,15 +581,19 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;./output/parquet/url_domain_twitch&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;./output/parquet/url_twitch_test&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;./output/parquet/url_domain_twitch&quot;</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;./output/parquet/url_twitch_test&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 
 <span class="nn">File ~\miniconda3\lib\site-packages\pandas\io\parquet.py:503,</span> in <span class="ni">read_parquet</span><span class="nt">(path, engine, columns, storage_options, use_nullable_dtypes, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">456</span> <span class="sd">&quot;&quot;&quot;</span>
@@ -641,196 +652,123 @@ title="Print to PDF"
 <span class="g g-Whitespace">    </span><span class="mi">866</span>     <span class="n">handles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">868</span> <span class="c1"># Convert BytesIO or file objects passed with an encoding</span>
 
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./output/parquet/url_domain_twitch&#39;
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./output/parquet/url_twitch_test&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">person_id</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(873668, 21)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8737
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;domain_name&quot;</span><span class="p">)[</span><span class="s1">&#39;domain_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>machine_id</th>
-      <th>url_idc</th>
-      <th>person_id</th>
-      <th>ss2k</th>
-      <th>time_id</th>
-      <th>domain_name</th>
-      <th>url_host</th>
-      <th>url_dir</th>
-      <th>url_page</th>
-      <th>url_refer_domain</th>
-      <th>...</th>
-      <th>url_refer_dir</th>
-      <th>url_refer_page</th>
-      <th>mimetype</th>
-      <th>http_rc</th>
-      <th>keywords</th>
-      <th>html_title</th>
-      <th>pattern_id</th>
-      <th>year</th>
-      <th>month</th>
-      <th>day</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>248349067</td>
-      <td>HNN7xYtNAgxFKQBsiDVyab</td>
-      <td>452606243</td>
-      <td>599780225</td>
-      <td>6941</td>
-      <td>twitch.tv</td>
-      <td>pubsub-edge.twitch.tv</td>
-      <td>/</td>
-      <td>v1</td>
-      <td>None</td>
-      <td>...</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>101</td>
-      <td>SECURE</td>
-      <td>SECURE</td>
-      <td>10355136</td>
-      <td>2019</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>263072658</td>
-      <td>mnOnzogikHbGW91fDq5i93</td>
-      <td>434113017</td>
-      <td>599786289</td>
-      <td>6941</td>
-      <td>twitch.tv</td>
-      <td>client-event-reporter.twitch.tv</td>
-      <td>/</td>
-      <td>/</td>
-      <td>None</td>
-      <td>...</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>200</td>
-      <td>SECURE</td>
-      <td>SECURE</td>
-      <td>10355136</td>
-      <td>2019</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>218778557</td>
-      <td>2OC8FWVwQumUMTh51$tLf0</td>
-      <td>392721004</td>
-      <td>599746847</td>
-      <td>6941</td>
-      <td>twitch.tv</td>
-      <td>pubsub-edge.twitch.tv</td>
-      <td>/</td>
-      <td>/</td>
-      <td>None</td>
-      <td>...</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>200</td>
-      <td>SECURE</td>
-      <td>SECURE</td>
-      <td>10355136</td>
-      <td>2019</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>218778557</td>
-      <td>Mqoo7ZXs4MNoHwDsnHxp0e</td>
-      <td>392721004</td>
-      <td>599752699</td>
-      <td>6941</td>
-      <td>twitch.tv</td>
-      <td>pubsub-edge.twitch.tv</td>
-      <td>/</td>
-      <td>/</td>
-      <td>None</td>
-      <td>...</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>200</td>
-      <td>SECURE</td>
-      <td>SECURE</td>
-      <td>10355136</td>
-      <td>2019</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>218778557</td>
-      <td>UwWxtCLDAHbWm95QD7vIf0</td>
-      <td>392721004</td>
-      <td>599724558</td>
-      <td>6941</td>
-      <td>twitch.tv</td>
-      <td>pubsub-edge.twitch.tv</td>
-      <td>/</td>
-      <td>/</td>
-      <td>None</td>
-      <td>...</td>
-      <td>None</td>
-      <td>None</td>
-      <td>None</td>
-      <td>200</td>
-      <td>SECURE</td>
-      <td>SECURE</td>
-      <td>10355136</td>
-      <td>2019</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-<p>5 rows × 21 columns</p>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>domain_name
+twitch.tv                        1181311
+twitch.com                           684
+twitchy.com                          650
+twitchapp.net                        588
+chatwitch.com                        511
+slowtwitch.com                       351
+twitchalerts.com                     198
+twitchoverlay.com                    186
+twitchapps.com                       114
+multitwitch.tv                        98
+twitchemotes.com                      94
+twitchquotes.com                      77
+twitchymail.com                       35
+twitchprime.com                       25
+twitch                                25
+twitchstats.net                       24
+twitchadvertising.tv                  23
+twitchmetrics.net                     19
+twitch-grills.com                     17
+twitchtv-activate.com                 15
+twitch-buddy.com                      14
+twitchetts.com                        13
+twitched.org                          13
+barefootwitcheryshoppe.com            11
+www.twitch                            11
+twitch-designs.com                    10
+twitch-viewerbot.com                  10
+twitchcon.com                          9
+twitchtemple.com                       9
+twitchplaysnintendoswitch.com          9
+knitwitch.com                          8
+twitchstrike.com                       6
+multitwitch.live                       6
+twitchbot.io                           6
+twitchboard.net                        6
+twitch.center                          5
+freetwitchoverlays.com                 4
+twitch.tc                              3
+twitchtvactivates.com                  3
+twitchsubscribers.com                  2
+twitchspeed.com                        2
+twitch.tw                              2
+thebestoftwitch.com                    2
+twitch.tvforsakentearslife             2
+sleeptwitch.com                        2
+breakthetwitch.com                     2
+twitchbrowser.com                      2
+twitchtv                               2
+twitchtvactivate.org                   1
+bigfatwitch.com                        1
+visitwitchita.com                      1
+twitchoverlays.net                     1
+pcepcetwitch.tv                        1
+twitchmoments.de                       1
+twitchfollows.com                      1
+twitch.rv                              1
+twitch.t                               1
+auslove.twitch                         1
+Name: domain_name, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_twitch_tv</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;domain_name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;twitch.tv&#39;</span><span class="p">]</span>
+<span class="n">df_twitch_tv</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1181311, 21)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">day_counts</span> <span class="o">=</span> <span class="n">df_twitch_tv</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;day&#39;</span><span class="p">])[[</span><span class="s1">&#39;day&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">day_counts</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">();</span> <span class="c1">#.get_figure().savefig(&#39;output/plots/day_counts.png&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/comscore-filter-domain_11_0.png" src="../_images/comscore-filter-domain_11_0.png" />
+</div>
 </div>
 
     <script type="text/x-thebe-config">

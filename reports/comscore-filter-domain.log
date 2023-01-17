@@ -17,13 +17,17 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-df = pd.read_parquet("./output/parquet/url_domain_twitch")
+df = pd.read_parquet("./output/parquet/url_twitch_test")
+print(df.shape)
+df.head()
 ------------------
 
 [1;31m---------------------------------------------------------------------------[0m
 [1;31mFileNotFoundError[0m                         Traceback (most recent call last)
-Cell [1;32mIn[6], line 1[0m
-[1;32m----> 1[0m df [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_parquet[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43m./output/parquet/url_domain_twitch[39;49m[38;5;124;43m"[39;49m[43m)[49m
+Cell [1;32mIn[7], line 1[0m
+[1;32m----> 1[0m df [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_parquet[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43m./output/parquet/url_twitch_test[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[0;32m      2[0m [38;5;28mprint[39m(df[38;5;241m.[39mshape)
+[0;32m      3[0m df[38;5;241m.[39mhead()
 
 File [1;32m~\miniconda3\lib\site-packages\pandas\io\parquet.py:503[0m, in [0;36mread_parquet[1;34m(path, engine, columns, storage_options, use_nullable_dtypes, **kwargs)[0m
 [0;32m    456[0m [38;5;124;03m"""[39;00m
@@ -82,6 +86,6 @@ File [1;32m~\miniconda3\lib\site-packages\pandas\io\common.py:865[0m, in [0;3
 [0;32m    866[0m     handles[38;5;241m.[39mappend(handle)
 [0;32m    868[0m [38;5;66;03m# Convert BytesIO or file objects passed with an encoding[39;00m
 
-[1;31mFileNotFoundError[0m: [Errno 2] No such file or directory: './output/parquet/url_domain_twitch'
-FileNotFoundError: [Errno 2] No such file or directory: './output/parquet/url_domain_twitch'
+[1;31mFileNotFoundError[0m: [Errno 2] No such file or directory: './output/parquet/url_twitch_test'
+FileNotFoundError: [Errno 2] No such file or directory: './output/parquet/url_twitch_test'
 

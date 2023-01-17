@@ -325,11 +325,26 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="data-workflows">
 <h1>Data Workflows<a class="headerlink" href="#data-workflows" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>We can roughly divide data workflow development into two phases:</p>
+<ul>
+<li><p>Exploration</p></li>
+<li><p>Deployment</p></li>
+</ul>
+</li>
+<li><p>Each phase benefits from different tools. For exploration it pays to have a [REPL(<a class="reference external" href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">https://en.wikipedia.org/wiki/Read–eval–print_loop</a>) environment. <a class="reference external" href="https://jupyter.org/">Jupyter notebooks</a> are particularly nice, but not required.</p></li>
+<li><p>Deployment benefits from tools that lend themselves to automation. Scripts (bash, python, R, or whatever else) that can be executed without any human interaction are the prototype.</p></li>
+<li><p>Deployment goes hand in hand with automated testing code to validate that nothing unexpected is happening. Tests give you increased confidence (though no guarantee) that you are not messing up.</p></li>
+<li><p>The workshop repository contains a <a class="reference external" href="https://github.com/rs-kellogg/data-the-right-way/tree/main/comscore-project">sample project</a> to demonstrate these concepts.</p></li>
+</ul>
 <p><img alt="Data Workflow" src="_images/data-automation.png" /></p>
 <ul class="simple">
 <li><p>Open Science related issues – data extracts/summaries</p></li>
 <li><p>Testing your workflow, modular workflow</p></li>
 </ul>
+<p><img alt="Data Workflow" src="_images/reproducibility.png" /></p>
+<p><img alt="Data Workflow" src="_images/git-workflow.png" /></p>
+<p><img alt="Data Workflow" src="_images/unit-testing-puzzle.png" /></p>
 </section>
 
     <script type="text/x-thebe-config">
