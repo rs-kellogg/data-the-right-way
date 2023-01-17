@@ -53,24 +53,13 @@ clean-notebooks: ## remove notebook junk
 clean-misc: ## misc. junk
 	find . -name '.DS_store' -exec rm -f {} +
 	find . -name 'temp' -exec rm -rf {} +
-
-lint: ## check style with flake8
-	flake8 edgar2data tests
+	find . -name '*~' -exec rm -rf {} +
 
 test:
-	pytest
+	pytest tests/
 
 install: clean
 	pip install .
 
-build-docker:
-	docker build -t rskellogg/edgar2data .
-
-push-docker:
-	docker push rskellogg/edgar2data:0.1.0
-
-start-docker-shell:
-	docker run -it --entrypoint /bin/bash -p 80:80 rskellogg/edgar2data
-
-start-docker-service:
-	docker run -d --name rskellogg/edgar2data -p 80:80 edgar2data
+env:
+	conda env create --name $(PARAM) --file=env.yml
