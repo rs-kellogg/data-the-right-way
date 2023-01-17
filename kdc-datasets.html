@@ -355,6 +355,14 @@ title="Print to PDF"
 </div>
 <ul class="simple">
 <li><p>There are many similarities between these two systems, including the ability to use SQL clients and ODBC-based connections from software like R, Python, and Stata. The cloud-based version has the advantage of being able to handle larger datasets, and allowing us to take advantage of the many tools available in the cloud.</p></li>
+<li><p><a class="reference external" href="https://github.com/rs-kellogg/data-the-right-way/blob/main/pyodbc-example.ipynb">ODBC example notebook</a></p></li>
+</ul>
+<p><a class="reference external" href="https://docs.aws.amazon.com/athena/latest/ug/what-is.html">Athena documentation</a>{:target=”_blank”}</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Athena carries out queries simultaneously, so even queries on very large datasets can be obtained within seconds. Due to Athena’s distributed, serverless architecture, it can support large numbers of users and queries, and computing resources like CPU and RAM are seamlessly provisioned.</p>
+</div>
+<ul class="simple">
 <li><p>Example: AWS web-based query console removes need to install and connect through a 3rd party tool</p></li>
 <li><p>Example: firing up an EC2 instance with GPUs for machine learning <a class="reference external" href="https://aws.amazon.com/releasenotes/aws-deep-learning-ami-catalog/">AWS Deep Learning AMIs</a></p></li>
 <li><p>Example: Running Apache Spark to handle very large scale data workloads.</p></li>
