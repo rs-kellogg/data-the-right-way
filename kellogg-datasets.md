@@ -4,10 +4,9 @@ Kellogg hosts several dozen [datasets](https://www.kellogg.northwestern.edu/rese
 
 The KRS website has detailed information on these datasets. For example, here is the "card" for Comscore:
 
-```{image} images/comscore-data-card.png
-:border: 1px solid black
-```
+```{note}
 ![Comscore Data Card](images/comscore-data-card.png)
+```
 
 They can be found in several places, three of which we will describe here:
 

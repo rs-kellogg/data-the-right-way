@@ -1,0 +1,29 @@
+UNLOAD (
+SELECT 
+    u.machine_id,
+    u.url_idc, 
+    u.person_id, 
+    u.ss2k, 
+    u.time_id, 
+    u.domain_name, 
+    u.url_host, 
+    u.url_dir, 
+    u.url_page, 
+    u.url_refer_domain, 
+    u.url_refer_host, 
+    u.url_refer_dir, 
+    u.url_refer_page, 
+    u.mimetype, 
+    u.http_rc, 
+    u.keywords, 
+    u.html_title, 
+    u.pattern_id
+FROM "comscore"."url" as u
+WHERE 
+    u.year='{{year}}'
+    and u.month='{{month}}'
+    and u.day='{{day}}'
+    and (u.domain_name LIKE '%twitch%')
+) 
+TO 's3://kdc-comscore/parquet-extracts/url_domain_twitch/year={{year}}/month={{month}}/day={{day}}' 
+WITH ( format = 'parquet', compression = 'snappy' )
