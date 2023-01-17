@@ -1,23 +1,25 @@
 # Kellogg Datasets
 
-Kellogg hosts several dozen [datasets](https://www.kellogg.northwestern.edu/research-support/dataset.aspx).
+Kellogg hosts many datasets. The [Kellogg Research Support website](https://www.kellogg.northwestern.edu/research-support/dataset.aspx) has detailed information on them, including how to access them. For example, here is the entry for the Comscore dataset:
 
-The KRS website has detailed information on these datasets. For example, here is the "card" for Comscore:
+
+```{note}
+Highlighting a dataset will pop up a "Data Card" providing many details on the dataset and how to access it. Here is the data card for the Comscore dataset:
+```
 
 ```{note}
 ![Comscore Data Card](images/comscore-data-card.png)
 ```
 
-They can be found in several places, three of which we will describe here:
-
-* The Kellogg Linux Cluster ([KLC](https://www.kellogg.northwestern.edu/research-support/computing/kellogg-linux-cluster.aspx))
-* The Kellog Data Center ([KDC0](https://www.kellogg.northwestern.edu/research-support/computing/kellogg-data-center.aspx))
-* The Kellog Data [<span style="color:purple">*Cloud*</span>](https://nu-sso.awsapps.com/start/#/)
-
 ```{note}
-KDC (Kellogg Data Center) will be retired this Summer.
-KDC (Kellogg Data Cloud) will take its place.
-![SQL-Server](./images/sql-server-2-aws.png)
+Datasets hosted by Kellogg can be found in several places, three of which we will describe here:
+
+* [Kellogg Linux Cluster](https://www.kellogg.northwestern.edu/research-support/computing/kellogg-linux-cluster.aspx)
+* [Kellog Data Center](https://www.kellogg.northwestern.edu/research-support/computing/kellogg-data-center.aspx)
+* [Kellog Data Cloud](https://nu-sso.awsapps.com/start/#/)
 ```
 
-Accessing the Cloud version requires one extra step, authentication to AWS. Otherwise accessing the data is quite similar.
+```{warning}
+The Kellogg Data Center will be retired this Summer. At that time, the acronym "KDC" will take on a new meaning, and will refer to the The <span style="color:purple">*Kellogg Data Cloud*</span>.
+```
+
