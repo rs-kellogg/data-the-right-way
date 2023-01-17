@@ -62,4 +62,4 @@ install: clean
 	pip install .
 
 env:
-	conda env create --name $(PARAM) --file=env.yml
+	conda env create --name $(NAME) --file=environment.yml
