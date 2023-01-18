@@ -54,7 +54,7 @@ The [Kellogg Data Cloud](https://nu-sso.awsapps.com/start/#/) is a cloud-based d
 
 * Like Microsoft SQL Server, AWS Athena allows for the use of SQL clients and ODBC-based connections from software. Here is an [ODBC example notebook](https://github.com/rs-kellogg/data-the-right-way/blob/main/comscore-project/comscore-odbc.ipynb) for Python. R and Stata can also be used to directly connect to Athena.
 * Athena has an advantage over KLC of being able to handle larger datasets.
-* The Athena web-based query console removes need to install and connect through a 3rd party tool such as Datagrip. However, you can still use tools such as Datagrip if that is preferred.
+* The Athena web-based query console removes need to install and connect through a 3rd party tool such as Datagrip. However, you can still use tools if that is your preferred mode.
 
 * Here is an example of how to set AWS Athena connection parameters for Datagrip:
 
