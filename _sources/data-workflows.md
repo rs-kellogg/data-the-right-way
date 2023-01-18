@@ -35,7 +35,7 @@ Here is a high-level overview of different data layouts from an informative [blo
 * The workshop repository contains a [sample project](https://github.com/rs-kellogg/data-the-right-way/tree/main/comscore-project) to demonstrate these concepts.
 
 ```{admonition} Reproducibility
-Automoation, verion conrol, and testing help make your data workflows reproduciblee and more reliable. Your future self will thank you!
+Automoation, version conrol, and testing help make your data workflows reproducible and resilient. Your future self will thank you for putting in the effort!
 ```
 
 ![Data Workflow](images/data-automation.png)
