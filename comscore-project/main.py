@@ -49,9 +49,9 @@ def run_daily(
         query_id = r[1]['QueryExecution']['QueryExecutionId']
         query_sql = r[1]['QueryExecution']['Query']
         state = r[1]['QueryExecution']['Status']['State']
-        rows.append((date, query_id, query_sql, state))
+        rows.append((date, query_id, state))
 
-    results_df = pd.DataFrame(rows, columns=['date', 'query_id', "query_sql", "state"])
+    results_df = pd.DataFrame(rows, columns=['date', 'query_id', "state"])
     now = f"{dt.datetime.now()}".replace(" ", "_")
     results_df.to_csv(
         f"{out_dir/'query_results_'}{now}.csv", 
