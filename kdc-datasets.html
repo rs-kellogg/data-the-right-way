@@ -391,7 +391,14 @@ title="Print to PDF"
 <li><p>KDC is accessible from a <em>SQL</em> client. This could be a dedicated SQL client, such as <a class="reference external" href="https://www.jetbrains.com/datagrip/">Datagrip</a> or <a class="reference external" href="https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16">Microsoft SSMS</a> or many, many other choices</p></li>
 <li><p>It could also be a programmatic connection via <a class="reference external" href="https://en.wikipedia.org/wiki/Open_Database_Connectivity">ODBC</a>, with implementations available in most programming languages (Python, R, Stata, etc).</p></li>
 </ul>
-<a class="reference internal image-reference" href="_images/kdc-ssms-snapshot.png"><img alt="data-formats" class="align-center" src="_images/kdc-ssms-snapshot.png" style="width: 700px;" /></a>
+<ul class="simple">
+<li><p>Here is a snapshot of Microsoft SSMS connection to KDC:</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/kdc-ssms-snapshot.png"><img alt="sms-snapshot" class="align-center" src="_images/kdc-ssms-snapshot.png" style="width: 700px;" /></a>
+<ul class="simple">
+<li><p>Here is an example of how to set connection parameters for Datagrip:</p></li>
+</ul>
+<a class="reference internal image-reference" href="_images/kdc-connection-settings-datagrip.png"><img alt="datarip-connection-settings" class="align-center" src="_images/kdc-connection-settings-datagrip.png" style="width: 400px;" /></a>
 </section>
 <section id="kellogg-data-cloud">
 <h2>Kellogg Data Cloud<a class="headerlink" href="#kellogg-data-cloud" title="Permalink to this headline">#</a></h2>
@@ -402,7 +409,9 @@ title="Print to PDF"
 </div>
 <div class="admonition-athena-marketing-copy admonition">
 <p class="admonition-title">Athena Marketing Copy</p>
-<p><a class="reference external" href="https://docs.aws.amazon.com/athena/latest/ug/what-is.html">Athena</a> carries out queries simultaneously, so even queries on very large datasets can be obtained within seconds. Due to Athena’s distributed, serverless architecture, it can support large numbers of users and queries, and computing resources like CPU and RAM are seamlessly provisioned.</p>
+<blockquote>
+<div><p><a class="reference external" href="https://docs.aws.amazon.com/athena/latest/ug/what-is.html">Athena</a> carries out queries simultaneously, so even queries on very large datasets can be obtained within seconds. Due to Athena’s distributed, serverless architecture, it can support large numbers of users and queries, and computing resources like CPU and RAM are seamlessly provisioned.</p>
+</div></blockquote>
 </div>
 <ul class="simple">
 <li><p>Like Microsoft SQL Server, AWS Athena allows for the use of SQL clients and ODBC-based connections from software. Here is an <a class="reference external" href="https://github.com/rs-kellogg/data-the-right-way/blob/main/pyodbc-example.ipynb">ODBC example notebook</a> for Python. R and Stata can also be used to directly connect to Athena.</p></li>
