@@ -5,7 +5,6 @@
 For the next few months, "KDC" can mean one of two things:
 - Kellogg Data Center (Microsft SQL Server)
 - Kellogg Data Cloud (Amazon Web Services)
-```
 
 The Kellogg Data Center will be retired this Summer. At that time, the acronym "KDC" will take on a single meaning, and will refer simply to the <span style="color:purple">*Kellogg Data Cloud*</span>.
 ```
