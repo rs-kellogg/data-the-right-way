@@ -17,7 +17,7 @@ console = cons.Console(style="green on black")
 # -----------------------------------------------------------------------------
 @app.command()
 def run_daily(
-        aws_profile: str = typer.Argument(..., help="AWS profile to use."),
+    aws_profile: str = typer.Argument("default", help="AWS profile to use."),
     template_file: Path = typer.Argument(..., help="SQL template file path"),
     start_date: str = typer.Argument(..., help="start date in format yyyy-mmm-dd"),
     end_date: str = typer.Argument(..., help="end date in format yyyy-mmm-dd"),

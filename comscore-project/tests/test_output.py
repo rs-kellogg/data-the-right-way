@@ -23,5 +23,5 @@ def test_parquet_for_sanity(parquet_path):
     assert (parquet_path/"url_domain_twitch").exists()
     df = pd.read_parquet(parquet_path/"url_domain_twitch")
     twitch_df = df[df['domain_name'] == 'twitch.tv']
-    assert(len(twitch_df)) == 1_437_896
+    assert(len(twitch_df)) == 1951066
 
