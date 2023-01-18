@@ -31,7 +31,7 @@ The one extra step is authenticating yourself with Duo Mobile to AWS, using neti
     :align: center
 ```
 
-* Here is an example of how to set connection parameters for Datagrip:
+* Here is an example of how to set SQL Server connection parameters for Datagrip:
 
 ```{image} ./images/kdc-connection-settings-datagrip.png
     :alt: datarip-connection-settings
@@ -54,6 +54,15 @@ The [Kellogg Data Cloud](https://nu-sso.awsapps.com/start/#/) is a cloud-based d
 * Like Microsoft SQL Server, AWS Athena allows for the use of SQL clients and ODBC-based connections from software. Here is an [ODBC example notebook](https://github.com/rs-kellogg/data-the-right-way/blob/main/comscore-project/comscore-odbc.ipynb) for Python. R and Stata can also be used to directly connect to Athena.
 * Athena has an advantage over KLC of being able to handle larger datasets.
 * The Athena web-based query console removes need to install and connect through a 3rd party tool such as Datagrip. However, you can still use tools such as Datagrip if that is preferred.
+
+* Here is an example of how to set AWS Athena connection parameters for Datagrip:
+
+```{image} ./images/aws-connection-settings-datagrip.png
+    :alt: datarip-connection-settings
+    :width: 400px
+    :align: center
+```
+
 
 ```{admonition} Benefits of moving to the cloud
 Moving data to the cloud unlocks a huge toolset for data processing, including handling of very large scale datasets, image processing, text processing, and GPUs for deep learning.
