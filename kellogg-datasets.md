@@ -9,7 +9,7 @@ Datasets hosted by Kellogg can be found in several places, three of which we wil
 * [Kellog Data Cloud](https://nu-sso.awsapps.com/start/#/)
 
 ```{admonition} Data Card for Comscore (KDC)
-Highlighting a dataset will pop up a "Data Card" providing many details on the dataset and how to access it. Here is the data card for the Comscore dataset:
+Highlighting a dataset will pop up a *data card* providing many details on the dataset and how to access it. Here is the data card for the Comscore dataset:
 
 ![Comscore Data Card](images/comscore-data-card.png)
 ```

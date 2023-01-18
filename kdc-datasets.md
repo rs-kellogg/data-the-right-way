@@ -22,12 +22,22 @@ The one extra step is authenticating yourself with Duo Mobile to AWS, using neti
 ![Data Workflow](images/data-pipeline-sql-server.png)
 - KDC is accessible from a *SQL* client. This could be a dedicated SQL client, such as [Datagrip](https://www.jetbrains.com/datagrip/) or [Microsoft SSMS](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16) or many, many other choices
 - It could also be a programmatic connection via [ODBC](https://en.wikipedia.org/wiki/Open_Database_Connectivity), with implementations available in most programming languages (Python, R, Stata, etc).
+
+* Here is a snapshot of Microsoft SSMS connection to KDC:
+
 ```{image} ./images/kdc-ssms-snapshot.png
-    :alt: data-formats
+    :alt: sms-snapshot
     :width: 700px
     :align: center
 ```
 
+* Here is an example of how to set connection parameters for Datagrip:
+
+```{image} ./images/kdc-connection-settings-datagrip.png
+    :alt: datarip-connection-settings
+    :width: 400px
+    :align: center
+```
 
 ## Kellogg Data Cloud
 
@@ -38,7 +48,7 @@ The [Kellogg Data Cloud](https://nu-sso.awsapps.com/start/#/) is a cloud-based d
 ```
 
 ```{admonition} Athena Marketing Copy
-[Athena](https://docs.aws.amazon.com/athena/latest/ug/what-is.html) carries out queries simultaneously, so even queries on very large datasets can be obtained within seconds. Due to Athena’s distributed, serverless architecture, it can support large numbers of users and queries, and computing resources like CPU and RAM are seamlessly provisioned.
+> [Athena](https://docs.aws.amazon.com/athena/latest/ug/what-is.html) carries out queries simultaneously, so even queries on very large datasets can be obtained within seconds. Due to Athena’s distributed, serverless architecture, it can support large numbers of users and queries, and computing resources like CPU and RAM are seamlessly provisioned.
 ```
 
 * Like Microsoft SQL Server, AWS Athena allows for the use of SQL clients and ODBC-based connections from software. Here is an [ODBC example notebook](https://github.com/rs-kellogg/data-the-right-way/blob/main/pyodbc-example.ipynb) for Python. R and Stata can also be used to directly connect to Athena.
