@@ -7,7 +7,7 @@ For the next few months, "KDC" can mean one of two things:
 - Kellogg Data Cloud (Amazon Web Services)
 ```
 
-The Kellogg Data Center will be retired this Summer. At that time, the acronym "KDC" will take on a single meaning, and will refer simply to the The <span style="color:purple">*Kellogg Data Cloud*</span>.
+The Kellogg Data Center will be retired this Summer. At that time, the acronym "KDC" will take on a single meaning, and will refer simply to the <span style="color:purple">*Kellogg Data Cloud*</span>.
 ```
 
 ```{admonition} How does this change things?
@@ -24,10 +24,10 @@ The one extra step is authenticating yourself with Duo Mobile to AWS, using neti
 - KDC is accessible from a *SQL* client. This could be a dedicated SQL client, such as [Datagrip](https://www.jetbrains.com/datagrip/) or [Microsoft SSMS](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16) or many, many other choices
 - It could also be a programmatic connection via [ODBC](https://en.wikipedia.org/wiki/Open_Database_Connectivity), with implementations available in most programming languages (Python, R, Stata, etc).
 
-* Here is a snapshot of Microsoft SSMS connection to KDC:
+* Here is a snapshot of Datagrip with a connection set up to the Kellogg Data Center:
 
 ```{image} ./images/kdc-ssms-snapshot.png
-    :alt: sms-snapshot
+    :alt: datagrip-snapshot
     :width: 700px
     :align: center
 ```
