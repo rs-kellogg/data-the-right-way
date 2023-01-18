@@ -25,7 +25,7 @@ The one extra step is authenticating yourself with Duo Mobile to AWS, using neti
 
 * Here is a snapshot of Datagrip with a connection set up to the Kellogg Data Center:
 
-```{image} ./images/kdc-datagrip-snapshot.png
+```{image} ./images/kdc-datgrip-snapshot.png
     :alt: datagrip-snapshot
     :width: 700px
     :align: center
