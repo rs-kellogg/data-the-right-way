@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Scaling Queries" href="data-scaling.html" />
+    <link rel="next" title="Data Workflows" href="data-workflows.html" />
     <link rel="prev" title="KDC Datasets" href="kdc-datasets.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -130,12 +130,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="data-scaling.html">
-   Scaling Queries
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data-automation.html">
+  <a class="reference internal" href="data-workflows.html">
    Data Workflows
   </a>
  </li>
@@ -331,8 +326,9 @@ title="Print to PDF"
 </ul>
 <p><img alt="Data Workflow" src="_images/data-pipeline-klc.png" /></p>
 <ul class="simple">
-<li><p>With KLC, the data exist as inert files on disk – there is no general way to load and query the data. Instead, we need to write code to load the data into memory, and then query it. This is a very powerful approach, but it requires some programming.</p></li>
+<li><p>With KLC, the data exist as files on disk – there is no generic way (like SQL) to load and query the data. Instead, we need to write code to load the data into memory, and then query it. This is a very powerful approach, but it requires some programming.</p></li>
 <li><p>What kinds of program you write depends on the <em>format</em> of the data files. There is no single format. Some are text-based (CSV, JSON, XML), some are binary (Parquet, Avro, ORC).</p></li>
+<li><p><a class="reference external" href="https://github.com/rs-kellogg/edgar2data">There is a KRS github project</a> that provides a good example for how to process EDGAR documents (plain text + XML) to extract relevant information.</p></li>
 </ul>
 <a class="reference internal image-reference" href="_images/data-formats.png"><img alt="data-formats" class="align-center" src="_images/data-formats.png" style="width: 500px;" /></a>
 </section>
@@ -371,10 +367,10 @@ title="Print to PDF"
             <p class="prev-next-title">KDC Datasets</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="data-scaling.html" title="next page">
+    <a class='right-next' id="next-link" href="data-workflows.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Scaling Queries</p>
+        <p class="prev-next-title">Data Workflows</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

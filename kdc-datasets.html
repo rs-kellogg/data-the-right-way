@@ -130,11 +130,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="data-scaling.html">
-   Scaling Queries
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="data-workflows.html">
    Data Workflows
   </a>
@@ -299,12 +294,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kellogg-data-center">
+   Kellogg Data Center
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kellogg-data-cloud">
+   Kellogg Data Cloud
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -316,6 +340,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kellogg-data-center">
+   Kellogg Data Center
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kellogg-data-cloud">
+   Kellogg Data Cloud
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -325,48 +367,59 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="kdc-datasets">
 <h1>KDC Datasets<a class="headerlink" href="#kdc-datasets" title="Permalink to this headline">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For the next few months, “KDC” can mean one of two things:</p>
+<ul class="simple">
+<li><p>Kellogg Data Center</p></li>
+<li><p>Kellogg Data Cloud</p></li>
+</ul>
+<p>The Kellogg Data Center will be retired this Summer. At that time, the acronym “KDC” will take on a single meaning, and will refer simply to the The <span style="color:purple"><em>Kellogg Data Cloud</em></span>.</p>
+</div>
+<div class="admonition-how-does-this-change-things admonition">
+<p class="admonition-title">How does this change things?</p>
+<p>Accessing data will be similar, but the underlying infrastructure will be different. The Kellogg Data Cloud is a cloud-based data storage and compute environment. The cloud environment will offer many advantages in scalability, computating resources, and cost.</p>
+<p>The one extra step is authenticating yourself with Duo Mobile to AWS, using netid and password. Email <a class="reference external" href="mailto:rs&#37;&#52;&#48;kellogg&#46;northwestern&#46;edu">Kellogg Research Support</a> for assistance.</p>
+</div>
+<section id="kellogg-data-center">
+<h2>Kellogg Data Center<a class="headerlink" href="#kellogg-data-center" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>The <a class="reference external" href="https://www.kellogg.northwestern.edu/research-support/computing/kellogg-data-center.aspx">Kellogg Data Center</a> is a Microsoft SQL Server relational database management system that is currently available to Kellogg faculty and students.</p></li>
 </ul>
 <p><img alt="Data Workflow" src="_images/data-pipeline-sql-server.png" /></p>
 <ul class="simple">
-<li><p>KDC is accessible from a <em>SQL</em> client</p></li>
-<li><p>This could be a dedicated SQL client, such as <a class="reference external" href="https://www.jetbrains.com/datagrip/">Datagrip</a> or <a class="reference external" href="https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16">MS SSMS</a> or many, many other choices</p></li>
-<li><p>It could also be a programmatic connection via <a class="reference external" href="https://en.wikipedia.org/wiki/Open_Database_Connectivity">ODBC</a></p></li>
+<li><p>KDC is accessible from a <em>SQL</em> client. This could be a dedicated SQL client, such as <a class="reference external" href="https://www.jetbrains.com/datagrip/">Datagrip</a> or <a class="reference external" href="https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16">Microsoft SSMS</a> or many, many other choices</p></li>
+<li><p>It could also be a programmatic connection via <a class="reference external" href="https://en.wikipedia.org/wiki/Open_Database_Connectivity">ODBC</a>, with implementations available in most programming languages (Python, R, Stata, etc).</p></li>
 </ul>
 <a class="reference internal image-reference" href="_images/kdc-ssms-snapshot.png"><img alt="data-formats" class="align-center" src="_images/kdc-ssms-snapshot.png" style="width: 700px;" /></a>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>KDC (Kellogg Data Center) will be retired this Summer. At that time, the acronym “KDC” will take on a new meaning, and will refer to the The <span style="color:purple"><em>Kellogg Data Cloud</em></span>.</p>
-<p><img alt="Data Workflow" src="_images/sql-server-2-aws.png" /></p>
+</section>
+<section id="kellogg-data-cloud">
+<h2>Kellogg Data Cloud<a class="headerlink" href="#kellogg-data-cloud" title="Permalink to this headline">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a class="reference external" href="https://nu-sso.awsapps.com/start/#/">Kellogg Data Cloud</a> is a cloud-based data storage and compute environment.  We are currently focused on using Amazon Web Services (AWS), though we will probably expand to other cloud providers in the future. Within AWS, we will primarily rely on <a class="reference external" href="https://docs.aws.amazon.com/athena/latest/ug/what-is.html">AWS Athena</a> for querying data, though other application and software tools are also available.</p>
+<p><img alt="Data Workflow" src="_images/data-pipeline-aws.png" /></p>
 </div>
+<div class="admonition-athena-marketing-copy admonition">
+<p class="admonition-title">Athena Marketing Copy</p>
+<p><a class="reference external" href="https://docs.aws.amazon.com/athena/latest/ug/what-is.html">Athena</a> carries out queries simultaneously, so even queries on very large datasets can be obtained within seconds. Due to Athena’s distributed, serverless architecture, it can support large numbers of users and queries, and computing resources like CPU and RAM are seamlessly provisioned.</p>
+</div>
+<ul class="simple">
+<li><p>Like Microsoft SQL Server, AWS Athena allows for the use of SQL clients and ODBC-based connections from software. Here is an <a class="reference external" href="https://github.com/rs-kellogg/data-the-right-way/blob/main/pyodbc-example.ipynb">ODBC example notebook</a> for Python. R and Stata can also be used to directly connect to Athena.</p></li>
+<li><p>Athena has an advantage over KLC of being able to handle larger datasets.</p></li>
+<li><p>The Athena web-based query console removes need to install and connect through a 3rd party tool such as Datagrip. However, you can still use tools such as Datagrip if that is preferred.</p></li>
+</ul>
 <div class="admonition-benefits-of-moving-to-the-cloud admonition">
 <p class="admonition-title">Benefits of moving to the cloud</p>
 <p>Moving data to the cloud unlocks a huge toolset for data processing, including handling of very large scale datasets, image processing, text processing, and GPUs for deep learning.</p>
-<p><img alt="Data Workflow" src="_images/aws-console-home.png" /></p>
-</div>
 <ul class="simple">
-<li><p>The <a class="reference external" href="https://nu-sso.awsapps.com/start/#/">Kellogg Data Cloud</a> is a cloud-based data storage and compute environment. Currently we are focused on using Amazon Web Services (AWS) for storage and compute, though we may expand to other cloud providers in the future. We will focus on using <a class="reference external" href="https://docs.aws.amazon.com/athena/latest/ug/what-is.html">AWS Athena</a> for querying data in the Kellogg Data Cloud.</p></li>
-</ul>
-<p><img alt="Data Workflow" src="_images/data-pipeline-aws.png" /></p>
-<div class="tip admonition">
-<p class="admonition-title">How does this change things?</p>
-<p>Accessing data will be similar, but the underlying infrastructure will be different. The Kellogg Data Cloud is a cloud-based data storage and compute environment. The cloud environment will offer many advantages in scalability, computating resources, and cost.</p>
-</div>
-<ul class="simple">
-<li><p>There are many similarities between these two systems, including the ability to use SQL clients and ODBC-based connections from software like R, Python, and Stata. The cloud-based version has the advantage of being able to handle larger datasets, and allowing us to take advantage of the many tools available in the cloud.</p></li>
-<li><p><a class="reference external" href="https://github.com/rs-kellogg/data-the-right-way/blob/main/pyodbc-example.ipynb">ODBC example notebook</a></p></li>
-</ul>
-<p><a class="reference external" href="https://docs.aws.amazon.com/athena/latest/ug/what-is.html">Athena documentation</a>{:target=”_blank”}</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Athena carries out queries simultaneously, so even queries on very large datasets can be obtained within seconds. Due to Athena’s distributed, serverless architecture, it can support large numbers of users and queries, and computing resources like CPU and RAM are seamlessly provisioned.</p>
-</div>
-<ul class="simple">
-<li><p>Example: AWS web-based query console removes need to install and connect through a 3rd party tool</p></li>
 <li><p>Example: firing up an EC2 instance with GPUs for machine learning <a class="reference external" href="https://aws.amazon.com/releasenotes/aws-deep-learning-ami-catalog/">AWS Deep Learning AMIs</a></p></li>
 <li><p>Example: Running Apache Spark to handle very large scale data workloads.</p></li>
+<li><p>Example: Sagemaker notebooks for rapid spinnning up of machine learning environments, including GPUs</p></li>
 </ul>
+<p><img alt="Data Workflow" src="_images/aws-console-home.png" /></p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

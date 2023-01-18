@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Summary" href="summary.html" />
-    <link rel="prev" title="Scaling Queries" href="data-scaling.html" />
+    <link rel="prev" title="KLC Datasets" href="klc-datasets.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -127,11 +127,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="klc-datasets.html">
    KLC Datasets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="data-scaling.html">
-   Scaling Queries
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -299,12 +294,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scaling-queries">
+   Scaling Queries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#automating-workflows">
+   Automating Workflows
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -316,6 +340,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scaling-queries">
+   Scaling Queries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#automating-workflows">
+   Automating Workflows
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -325,6 +367,25 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="data-workflows">
 <h1>Data Workflows<a class="headerlink" href="#data-workflows" title="Permalink to this headline">#</a></h1>
+<section id="scaling-queries">
+<h2>Scaling Queries<a class="headerlink" href="#scaling-queries" title="Permalink to this headline">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>With small or medium-sized datasets, we can mostly ignore issues like what format the data are in, or how to make queries more efficient. With bigger datasets, it is sometimes necessary to give these issues more thought.</p>
+</div>
+<div class="tip admonition note">
+<p class="admonition-title">Note</p>
+<p>In general a good workflow is to take a sample of data, small enough to load into memory and manipulate easily using your programming language of choice. SQL is not a great language for prototyping and exploration. Use Python, R, or Stata instead. Scale your queries once you’ve figured out what you really need.</p>
+</div>
+<p><img alt="Data Workflow" src="_images/data-scaling.png" /></p>
+<ul class="simple">
+<li><p>Data format becomes important when scaling queries to large datasets comes into focus.</p></li>
+<li><p>Here is a high-level overview of different data layouts from an informative <a class="reference external" href="https://towardsdatascience.com/demystifying-the-parquet-file-format-13adb0206705">blog post</a>:</p></li>
+</ul>
+<p><img alt="Data Workflow" src="_images/apache-parquet-overview.png" /></p>
+</section>
+<section id="automating-workflows">
+<h2>Automating Workflows<a class="headerlink" href="#automating-workflows" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>We can roughly divide data workflow development into two phases:</p>
 <ul>
@@ -345,6 +406,7 @@ title="Print to PDF"
 <p><img alt="Data Workflow" src="_images/reproducibility.png" /></p>
 <p><img alt="Data Workflow" src="_images/git-workflow.png" /></p>
 <p><img alt="Data Workflow" src="_images/unit-testing-puzzle.png" /></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -374,11 +436,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="data-scaling.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="klc-datasets.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Scaling Queries</p>
+            <p class="prev-next-title">KLC Datasets</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="summary.html" title="next page">
