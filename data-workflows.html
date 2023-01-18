@@ -380,9 +380,15 @@ title="Print to PDF"
 <p><img alt="Data Workflow" src="_images/data-scaling.png" /></p>
 <ul class="simple">
 <li><p>Data format becomes important when scaling queries to large datasets comes into focus.</p></li>
-<li><p>Here is a high-level overview of different data layouts from an informative <a class="reference external" href="https://towardsdatascience.com/demystifying-the-parquet-file-format-13adb0206705">blog post</a>:</p></li>
+<li><p>Most of the datasets on the Kellog Data Cloud are stored in S3 buckets in compressed parquet format. This is a column-based storage layout that has become very popular for <a class="reference external" href="https://en.wikipedia.org/wiki/Online_analytical_processing">OLAP-based</a> workloads. It’s a good match for most of the kinds of things that Kellogg researchers do.</p></li>
+<li><p>Scaling tips: Leverage partitions where possible; use a subset of columns where possible; filter data in multiple steps where possible.</p></li>
+<li><p>Frameworks like <a class="reference external" href="https://docs.aws.amazon.com/athena/latest/ug/notebooks-spark.html">Apache Spark</a> can be used for big (petabyte-scale) data workflows, or for workflows were you want to apply custom functions to big data.</p></li>
 </ul>
+<div class="admonition-more-about-format admonition">
+<p class="admonition-title">More about format</p>
+<p>Here is a high-level overview of different data layouts from an informative <a class="reference external" href="https://towardsdatascience.com/demystifying-the-parquet-file-format-13adb0206705">blog post</a>:</p>
 <p><img alt="Data Workflow" src="_images/apache-parquet-overview.png" /></p>
+</div>
 </section>
 <section id="automating-workflows">
 <h2>Automating Workflows<a class="headerlink" href="#automating-workflows" title="Permalink to this headline">#</a></h2>
@@ -393,7 +399,7 @@ title="Print to PDF"
 <li><p>Deployment</p></li>
 </ul>
 </li>
-<li><p>Each phase benefits from different tools. For exploration it pays to have a [REPL(<a class="reference external" href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">https://en.wikipedia.org/wiki/Read–eval–print_loop</a>) environment. <a class="reference external" href="https://jupyter.org/">Jupyter notebooks</a> are particularly nice, but not required.</p></li>
+<li><p>Each phase benefits from different tools. For exploration, it pays to have a [REPL(<a class="reference external" href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">https://en.wikipedia.org/wiki/Read–eval–print_loop</a>) environment. <a class="reference external" href="https://jupyter.org/">Jupyter notebooks</a> are particularly nice, but not required.</p></li>
 <li><p>Deployment benefits from tools that lend themselves to automation. Scripts (bash, python, R, or whatever else) that can be executed without any human interaction are the prototype.</p></li>
 <li><p>Deployment goes hand in hand with version control and automated testing. Version control allows you to recover snapshots in time, and never worry that you’ve lost work. Tests give you increased confidence (though no guarantee) in the veracity of your analyses.</p></li>
 <li><p>The workshop repository contains a <a class="reference external" href="https://github.com/rs-kellogg/data-the-right-way/tree/main/comscore-project">sample project</a> to demonstrate these concepts.</p></li>
