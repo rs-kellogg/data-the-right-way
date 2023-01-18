@@ -34,8 +34,8 @@ Here is a high-level overview of different data layouts from an informative [blo
 * Automation goes hand in hand with version control and automated testing. Version control allows you to recover snapshots in time, and never worry that you've lost work. Tests give you increased confidence (though no guarantee) in the veracity of your analyses.
 * The workshop repository contains a [sample project](https://github.com/rs-kellogg/data-the-right-way/tree/main/comscore-project) to demonstrate these concepts.
 
-```{admonition} Reproducibility
-Automoation, version conrol, and testing help make your data workflows reproducible and resilient. Your future self will thank you for putting in the effort!
+```{admonition} Reproducibility and Open Science
+Automation, version control, and testing work together to help make your data workflows reproducible and resilient. This is a key component of [Open Science](https://www.cos.io/). Your future self will be grateful to you for doing it the right way!
 ```
 
 ![Data Workflow](images/data-automation.png)
