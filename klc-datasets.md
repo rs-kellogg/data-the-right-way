@@ -7,8 +7,9 @@
 
 ![Data Workflow](images/data-pipeline-klc.png)
 
-* With KLC, the data exist as inert files on disk -- there is no general way to load and query the data. Instead, we need to write code to load the data into memory, and then query it. This is a very powerful approach, but it requires some programming.
+* With KLC, the data exist as files on disk -- there is no generic way (like SQL) to load and query the data. Instead, we need to write code to load the data into memory, and then query it. This is a very powerful approach, but it requires some programming.
 * What kinds of program you write depends on the *format* of the data files. There is no single format. Some are text-based (CSV, JSON, XML), some are binary (Parquet, Avro, ORC).
+* [There is a KRS github project](https://github.com/rs-kellogg/edgar2data) that provides a good example for how to process EDGAR documents (plain text + XML) to extract relevant information.
 
 ```{image} ./images/data-formats.png
     :alt: data-formats

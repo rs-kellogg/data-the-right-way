@@ -20,7 +20,3 @@ Here is the data card for the EDGAR dataset:
 ![Comscore Data Card](images/edgar-data-card.png)
 ```
 
-```{warning}
-The Kellogg Data Center will be retired this Summer. At that time, the acronym "KDC" will take on a new meaning, and will refer to the The <span style="color:purple">*Kellogg Data Cloud*</span>.
-```
-

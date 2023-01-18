@@ -1,5 +1,29 @@
 # Data Workflows
 
+## Scaling Queries
+
+```{warning}
+With small or medium-sized datasets, we can mostly ignore issues like what format the data are in, or how to make queries more efficient. With bigger datasets, it is sometimes necessary to give these issues more thought.
+```
+
+```{note}
+:class: tip
+In general a good workflow is to take a sample of data, small enough to load into memory and manipulate easily using your programming language of choice. SQL is not a great language for prototyping and exploration. Use Python, R, or Stata instead. Scale your queries once you've figured out what you really need.
+```
+
+![Data Workflow](images/data-scaling.png)
+
+* Data format becomes important when scaling queries to large datasets comes into focus.
+* Here is a high-level overview of different data layouts from an informative [blog post](https://towardsdatascience.com/demystifying-the-parquet-file-format-13adb0206705):
+
+![Data Workflow](images/apache-parquet-overview.png)
+
+```{admonition}
+Most of the datasets on the Kellog Data Cloud are stored in S3 buckets in compressed parquet format. This is a hybrid-based storage layout that has become very popular for [OLAP-based](https://en.wikipedia.org/wiki/Online_analytical_processing) workloads. It's a good match for most of the kinds of things that Kellogg researchers do.
+```
+
+## Automating Workflows
+
 * We can roughly divide data workflow development into two phases:
   * Exploration
   * Deployment
@@ -20,5 +44,3 @@
 
 
 ![Data Workflow](images/unit-testing-puzzle.png)
-
-

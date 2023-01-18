@@ -7,6 +7,5 @@ chapters:
 - file: kellogg-datasets
 - file: kdc-datasets
 - file: klc-datasets
-- file: data-scaling
 - file: data-workflows
 - file: summary
