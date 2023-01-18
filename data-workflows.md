@@ -29,7 +29,7 @@ Here is a high-level overview of different data layouts from an informative [blo
 * We can roughly divide data workflow development into two phases:
   * Exploration
   * Deployment
-* Each phase benefits from different tools. For exploration, it pays to have a [REPL(https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) environment. [Jupyter notebooks](https://jupyter.org/) are particularly nice, but not required.
+* Each phase benefits from different tools. For exploration, it pays to have a [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) environment. [Jupyter notebooks](https://jupyter.org/) are particularly nice, but not required.
 * Deployment benefits from tools that lend themselves to automation. Scripts (bash, python, R, or whatever else) that can be executed without any human interaction are the prototype.
 * Automation goes hand in hand with version control and automated testing. Version control allows you to recover snapshots in time, and never worry that you've lost work. Tests give you increased confidence (though no guarantee) in the veracity of your analyses.
 * The workshop repository contains a [sample project](https://github.com/rs-kellogg/data-the-right-way/tree/main/comscore-project) to demonstrate these concepts.
