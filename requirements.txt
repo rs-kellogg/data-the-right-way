@@ -1,2 +1,2 @@
-jupyterbook
+jupyter-book
 
